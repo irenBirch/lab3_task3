@@ -10,6 +10,8 @@ body {
   color: #333;
   padding: 20px;
   margin: 20px 150px;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -21,7 +23,7 @@ header h1 {
   color: #333;
   font-size: 48px;
   font-weight: 800;
-  
+  min-width: 300px;
 }
 
 .features {
@@ -29,6 +31,7 @@ header h1 {
   justify-content: space-around;
   padding: 10px;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .features li {
@@ -41,36 +44,38 @@ header h1 {
   position: relative;
   margin-bottom: 10px;
   margin-left: 20px;
+  min-width: 200px;
 }
-ul{
-    
-}
+
 .bold {
   font-weight: bold;
 }
 .steps {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 h2 {
   font-size: 40px;
   margin: 40px;
 }
 .step {
-    display: flex; 
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
   width: 18%;
   height: 480px;
   text-align: left;
+  margin-bottom: 2%;
   border: 1px solid black;
 }
 .step p {
   padding: 10px 30px;
 }
 .inside {
-    flex: 1; 
-    display: flex; 
-    align-items: flex-end; 
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
 }
 .inside img {
   margin-top: 15px;
@@ -85,29 +90,53 @@ h2 {
   border-radius: 50%;
   width: 40px;
 }
-
 .levels {
   padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap; 
 }
 
 .level {
-  margin: 0 auto;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
   padding: 0 15px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100%; 
+  box-sizing: border-box; 
 }
-.level p {
-  width: 50%;
-}
+
 .level img {
   padding-left: 10%;
+  margin-right: 2%;
+  width: 100%;
+  max-height: 340px;
+  min-width: 300px;
+  max-width: 550px;
 }
-#footer{
-    background-color: black;
-width: 80%;
-text-align: left;
-padding-left: 20px;
-padding-top: 8px;
+.level p {
+ min-width: 300px;
+ max-width: 70%;
+}
+.info-level {
+  width: 48%; 
+  min-width: 300px;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+@media (max-width: 768px) {
+  .level img, .info-level {
+    width: 100%; 
+    margin: 0 0 20px 0; 
+  }
+}
+
+#footer {
+  background-color: black;
+  width: 80%;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 8px;
 }
 footer {
   text-align: left;
